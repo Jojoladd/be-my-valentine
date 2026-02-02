@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Be My Valentine 💖</title>
+    <title>Veux-tu être ma Valentine 💖</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            background: linear-gradient(135deg, #ffb3b3, #ffd6cc);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -16,15 +16,16 @@
         }
 
         h1 {
-            font-size: 2.3em;
+            font-size: 2.4em;
             margin-bottom: 20px;
         }
 
         img {
-            width: 280px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            width: 240px;
+            border-radius: 18px;
+            margin: 15px auto 25px;
+            display: block;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
 
         .buttons {
@@ -70,11 +71,11 @@
 <body>
 
 <div id="page1">
-    <h1>Marion, will you be my Valentine? 💘</h1>
-    <img src="photo.jpg" alt="Us ❤️">
+    <h1>Marion, veux-tu être ma Valentine ? 💘</h1>
+    <img src="photo.jpg" alt="Nous ❤️">
     <div class="buttons">
-        <button id="yes">Yes 💖</button>
-        <button id="no">No 😅</button>
+        <button id="yes">Oui 💖</button>
+        <button id="no">Non 😅</button>
     </div>
 </div>
 
@@ -83,22 +84,24 @@
     const yesButton = document.getElementById("yes");
     const page1 = document.getElementById("page1");
 
+    // Le bouton "Non" fuit la souris
     noButton.addEventListener("mouseover", () => {
         const x = Math.random() * 300 - 150;
         const y = Math.random() * 120 - 60;
         noButton.style.transform = `translate(${x}px, ${y}px)`;
     });
 
+    // Clic sur "Oui" → page surprise
     yesButton.addEventListener("click", () => {
         page1.innerHTML = `
-            <h1>💖 Date Night 💖</h1>
+            <h1>💖 Rendez-vous amoureux 💖</h1>
             <p style="font-size:1.4em; margin-top:15px;">
-                📍 <strong>Maison Brume</strong><br>
-                February 14th<br>
-                <strong>8:15 PM</strong>
+                📍 <strong>Maison Brune</strong><br>
+                14 février<br>
+                <strong>20h15</strong>
             </p>
             <a href="https://www.maisonbrume.fr/" target="_blank">
-                View the place 🍷✨
+                Voir le restaurant 🍷✨
             </a>
         `;
     });
@@ -106,5 +109,3 @@
 
 </body>
 </html>
-
-
