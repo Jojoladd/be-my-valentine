@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Be My Valentine 💖</title>
@@ -12,23 +12,31 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            margin: 0;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
+            font-size: 2.3em;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 280px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .buttons {
             position: relative;
-            height: 200px;
+            height: 160px;
         }
 
         button {
             font-size: 1.2em;
             padding: 15px 30px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             position: absolute;
         }
@@ -41,37 +49,61 @@
         }
 
         #no {
-            background-color: #666;
+            background-color: #555;
             color: white;
             left: 50%;
             transform: translateX(20%);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            background-color: #ff4d6d;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
 
-    <div>
-        <h1>Marion, veux-tu être ma Valentine ? 💘</h1>
-        <div class="buttons">
-            <button id="yes">Oui 💖</button>
-            <button id="no">Non 😅</button>
-        </div>
+<div id="page1">
+    <h1>Marion, will you be my Valentine? 💘</h1>
+    <img src="photo.jpg" alt="Us ❤️">
+    <div class="buttons">
+        <button id="yes">Yes 💖</button>
+        <button id="no">No 😅</button>
     </div>
+</div>
 
-    <script>
-        const noButton = document.getElementById("no");
+<script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+    const page1 = document.getElementById("page1");
 
-        noButton.addEventListener("mouseover", () => {
-            const x = Math.random() * 300 - 150;
-            const y = Math.random() * 150 - 75;
+    noButton.addEventListener("mouseover", () => {
+        const x = Math.random() * 300 - 150;
+        const y = Math.random() * 120 - 60;
+        noButton.style.transform = `translate(${x}px, ${y}px)`;
+    });
 
-            noButton.style.transform = `translate(${x}px, ${y}px)`;
-        });
-
-        document.getElementById("yes").addEventListener("click", () => {
-            document.body.innerHTML = "<h1>💖 OUIIIII 😍💖<br>Joyeuse Saint-Valentin 💐</h1>";
-        });
-    </script>
+    yesButton.addEventListener("click", () => {
+        page1.innerHTML = `
+            <h1>💖 Date Night 💖</h1>
+            <p style="font-size:1.4em; margin-top:15px;">
+                📍 <strong>Maison Brume</strong><br>
+                February 14th<br>
+                <strong>8:15 PM</strong>
+            </p>
+            <a href="https://www.maisonbrume.fr/" target="_blank">
+                View the place 🍷✨
+            </a>
+        `;
+    });
+</script>
 
 </body>
 </html>
+
